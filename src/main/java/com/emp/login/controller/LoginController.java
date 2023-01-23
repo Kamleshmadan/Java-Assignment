@@ -50,10 +50,4 @@ public class LoginController {
 
 	}
 
-	@PostMapping("/logout")
-	public String logoutDo(Model mav2) {
-		mav2.addAttribute("user", new Login());
-		return "login";
-	}
-
 }
