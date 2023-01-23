@@ -24,14 +24,6 @@ public class UpController {
 		super();
 		this.empService = empService;
 	}
-//	@GetMapping("/")
-//	public ModelAndView getAllEmployees1()
-//	{
-//		ModelAndView mav = new ModelAndView("employee");
-//		mav.addObject("employees",eRepo.findAll());
-//		return mav;
-//	
-//	}
 
 	@GetMapping("/employee")
 	public ModelAndView getAllEmployees() {
