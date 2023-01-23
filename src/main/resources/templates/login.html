@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Employee Login</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+</head>
+
+<body>
+
+
+
+	<style type="text/css">
+		body,
+		td,
+		th {
+			color: #000000;
+		}
+
+		body {
+			background-color: #F0F0F0;
+		}
+
+		.style1 {
+			font-family: arial;
+			font-size: 14px;
+			padding: 12px;
+			line-height: 25px;
+			border-radius: 4px;
+			text-decoration: none;
+
+		}
+
+		.style2 {
+			font-family: arial;
+			font-size: 20px;
+			padding: 20px;
+			line-height: 25px;
+			border-radius: 4px;
+			text-decoration: none;
+
+		}
+	</style>
+
+	</head>
+
+	<body>
+		<!--<input type="hidden" id="status" th:value="${error}"/>-->
+
+		<div class="container">
+			<table width="100%" height="100%" border="0" cellpadding="150" align="center">
+				<tr>
+					<td align="center" valign="middle">
+						<table class="table-bordered" width="350" border="0" cellpadding="3" cellspacing="3"
+							bgcolor="#ffffff">
+
+							<form th:action="@{/index}" th:object="${user}" method="post">
+
+
+								<tr>
+
+									<td height="25" colspan="2" align="left" valign="middle" bgcolor="#ffffff"
+										class="style2">
+										<div align="center">
+											<div th:if="${error}" th:text="${error}" class="alert alert-danger"
+												role="alert"></div>
+											<strong>User Login </strong>
+
+
+
+										</div>
+
+									</td>
+								</tr>
+
+								<tr>
+									<td>UserId</td>
+									<td>
+
+										<input type="text" id="user" th:field="*{username}" placeholder="Enter UserId"
+											class="form-control" required />
+
+									</td>
+								</tr>
+								<tr>
+									<td>Password</td>
+									<td><input type="password" th:field="*{password}" placeholder="Enter Password"
+											class="form-control" required /></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center"><button type="submit" class="btn btn-info" <a
+											th:href="@{/employee}">>Login</button> </td>
+								</tr>
+								<!--<tr>
+			            <td colspan="2" align="right" ><a th:href="@{/forget}"> Forget Password ?   </a></td>
+			            </tr>-->
+
+							</form>
+						</table>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+	</body>
+	<!--
+<script>
+var status= document.getElementById("status").value;
+if(status=="Invalid Username or Password"){
+	alert("Invalid Username or Password")
+}
+</script>
+-->
+
+</html>
